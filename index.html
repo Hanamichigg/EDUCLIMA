@@ -59,7 +59,6 @@
         nav a:hover {
             color: #3498db;
             .nav-item a {
-                /* Existing styles... */
                 position: relative;
                 transition: color 0.3s ease-in-out;
             }
@@ -695,7 +694,7 @@
         }
         window.addEventListener('scroll', function () {
             let offset = window.pageYOffset;
-            document.body.style.backgroundPositionY = offset * 0.7 + 'px'; // Adjust the multiplier for the parallax effect
+            document.body.style.backgroundPositionY = offset * 0.7 + 'px'; 
         });
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
@@ -710,25 +709,24 @@
         }
 
         function subscribeToNewsletter() {
-            // Handle newsletter subscription logic here
             alert('Subscribed to newsletter!');
         }
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
         }
-        // Get your API key from OpenWeatherMap: https://openweathermap.org/appid
-  const apiKey = https://api.openweathermap.org/data/3.0/onecall/day_summary?lat=39.099724&lon=-94.578331&date=2020-03-04&appid={API key};
+        
+  const apiKey = https://api.openweathermap.org/data/3.0/onecall/day_summary?lat=39.099724&lon=-94.578331&date=2020-03-04&appid={8e27151132d3f9130b04bc641ca6fa90};
   const weatherInfoElement = document.getElementById('weather-info');
 
-  // Get user's location using Geolocation API
+ 
   navigator.geolocation.getCurrentPosition((position) => {
     const { latitude, longitude } = position.coords;
 
-    // Fetch weather data based on user's location
+    
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`)
       .then(response => response.json())
       .then(data => {
-        const temperature = Math.round(data.main.temp - 273.15); // Convert Kelvin to Celsius
+        const temperature = Math.round(data.main.temp - 273.15); 
         const description = data.weather[0].description;
         const city = data.name;
 
